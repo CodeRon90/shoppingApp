@@ -9,7 +9,7 @@ public class Customer {
     String customerID;
     Boolean isProMember = false;
 
-    public Customer(String name, String emailAddress, String phoneNumber, String password, String customerID, Boolean isProMember ) {
+    public Customer(String name, String emailAddress, String phoneNumber, String password, String customerID ) {
 
         this.name = name;
         this.emailAddress = emailAddress;
@@ -83,7 +83,7 @@ if (endsInS(name)){
         return false;
     }
 
-    public Customer register(String name,String emailAddress,String phoneNumber,String password, String customerID){
+    public static Customer register(String name,String emailAddress,String phoneNumber,String password, String customerID){
 
         if(name==null||name.isEmpty()){
 
@@ -129,7 +129,8 @@ if (endsInS(name)){
             throw new RuntimeException("customer ID  cannot be empty");
         }
 
-        Customer newCustomer = new Customer(name,emailAddress,phoneNumber,password,customerID,isProMember);
+        Customer newCustomer = new Customer(name,emailAddress,phoneNumber,password,customerID);
+        System.out.println("Thank you for registering "+ name);
         return newCustomer;
 
     }
