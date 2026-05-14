@@ -14,9 +14,15 @@ public class DemoApplication {
                 "0712356789",           // phoneNumber
                 "Password1!",            // password
                 "CUST001"                // customerID
+
+
+        );
+        System.out.println(
+                newCustomer.login("james@example.com", "Password1!")
         );
 
 	}
+
 
 
 }

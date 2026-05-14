@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Objects;
+
 public class Customer {
 
     String name;
@@ -134,5 +136,18 @@ if (endsInS(name)){
         return newCustomer;
 
     }
+
+    public String login(String emailAttempt, String passwordAttempt) {
+
+        boolean emailMatches = Objects.equals(this.emailAddress, emailAttempt);
+        boolean passwordMatches = Objects.equals(this.password, passwordAttempt);
+
+        if (!emailMatches || !passwordMatches) {
+            return "incorrect email or password, please try again";
+        }
+
+        return "login successful";
+    }
+
 
 }
