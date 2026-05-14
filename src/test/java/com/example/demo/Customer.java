@@ -7,6 +7,4 @@ public class Customer {
     String password;
     Boolean isProMember;
     int phoneNumber;
-
-
 }
