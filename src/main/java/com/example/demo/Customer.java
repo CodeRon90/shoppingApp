@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class Customer {
 
-    String name;
-    String emailAddress;
-    String phoneNumber;
-    String password;
-    String customerID;
-    Boolean isProMember = false;
+    private String name;
+    private String emailAddress;
+    private String phoneNumber;
+    private String password;
+    private String customerID;
+    private Boolean isProMember = false;
 
     public Customer(String name, String emailAddress, String phoneNumber, String password, String customerID ) {
 
@@ -85,69 +85,6 @@ if (endsInS(name)){
         return false;
     }
 
-    public static Customer register(String name,String emailAddress,String phoneNumber,String password, String customerID){
-
-        if(name==null||name.isEmpty()){
-
-            throw new RuntimeException("name cannot be empty");
-        }
-
-        else if(emailAddress==null||emailAddress.isEmpty()){
-
-            throw new RuntimeException("email cannot be empty");
-        }
-
-        else if(phoneNumber==null||phoneNumber.isEmpty()){
-
-            throw new RuntimeException("phone number cannot be empty");
-        }
-
-        else if (password == null || password.isEmpty()) {
-            throw new RuntimeException("password cannot be empty");
-        }
-
-        else if (password.length() < 8) {
-            throw new RuntimeException("password must be at least 8 characters long");
-        }
-
-        else if (!password.matches(".*[A-Z].*")) {
-            throw new RuntimeException("password must contain at least one uppercase letter");
-        }
-
-        else if (!password.matches(".*[a-z].*")) {
-            throw new RuntimeException("password must contain at least one lowercase letter");
-        }
-
-        else if (!password.matches(".*\\d.*")) {
-            throw new RuntimeException("password must contain at least one number");
-        }
-
-        else if (!password.matches(".*[!@#$%^&*().,?].*")) {
-            throw new RuntimeException("password must contain at least one special character");
-        }
-
-        else if(customerID==null||customerID.isEmpty()){
-
-            throw new RuntimeException("customer ID  cannot be empty");
-        }
-
-        Customer newCustomer = new Customer(name,emailAddress,phoneNumber,password,customerID);
-        System.out.println("Thank you for registering "+ name);
-        return newCustomer;
-
-    }
-
-    public String login(String emailAttempt, String passwordAttempt) {
-
-        boolean emailMatches = Objects.equals(this.emailAddress, emailAttempt);
-        boolean passwordMatches = Objects.equals(this.password, passwordAttempt);
-
-        if (!emailMatches || !passwordMatches) {
-            return "incorrect email or password, please try again";
-        }
-
-        return "login successful";
-    }
 
 
 }
